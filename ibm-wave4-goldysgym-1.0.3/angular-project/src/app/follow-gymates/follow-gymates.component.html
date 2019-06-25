@@ -1,0 +1,15 @@
+<h1>Follow Users</h1>
+<div class="container" *ngFor="let userlogin of arrayUser" > 
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center" *ngIf="userlogin.firstName.indexOf(this.lname) == -1">
+    {{userlogin.firstName}} {{userlogin.lastName}}
+    <div *ngIf="!userlogin.followed">
+    <button class="badge badge-primary badge-pill" (click) = "follow(userlogin.firstName)">Follow</button>
+    </div>
+    <div *ngIf="userlogin.followed">
+    <button class="badge badge-primary badge-pill" (click) = "unfollow(userlogin.firstName)">Unfollow</button>
+    </div>
+  </li>
+</ul>
+</div>
+

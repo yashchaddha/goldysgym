@@ -1,0 +1,20 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Desctiption</th>
+      <th scope="col">controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of programs">
+      <th scope="row">{{a.id}}</th>
+      <td>{{a.programName}}</td>
+      <td>{{a.programDescription}}</td>
+      <td><button type="button" routerLink="/admin/edit/{{a.programId}}" class="btn btn-primary">Edit</button>&nbsp;
+        <button type="button" (click)="remove(a.programId)" class="btn btn-danger">Remove</button></td>
+    </tr>
+    
+  </tbody>
+</table>
